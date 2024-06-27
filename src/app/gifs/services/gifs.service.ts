@@ -28,6 +28,11 @@ export class GifsService {
 
     this._tagHistory.unshift( tag );
     this._tagHistory = this.tagsHistory.splice(0,10);
+    this.saveLocalStorage();
+  }
+
+  private saveLocalStorage():void{
+    localStorage.setItem('history', JSON.stringify( this._tagHistory ));
   }
 
   searchTag( tag:string ):void {
