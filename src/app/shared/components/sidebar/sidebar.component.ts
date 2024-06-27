@@ -14,9 +14,15 @@ export class SidebarComponent {
    * Que sea por ngfor, dependiendo cuantos elelemntos tenga el gifsService
    */
 
-  get tagHistory() {
+  get tagHistory(): string[] {
     return this.giftService.tagsHistory;
   }
 
+
+  // mandar llamar el metodo del servicio, es excactyamente lo mismo que cuando buscamos
+  // uana palabra en el sidebar
+  searchTag( tag:string ):void {
+    this.giftService.searchTag( tag );
+  }
 
 }
